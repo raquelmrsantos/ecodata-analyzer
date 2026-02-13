@@ -36,12 +36,29 @@ export function FileUpload({ onFileProcessed }: FileUploadProps) {
         const headers = lines[0].split(",").map((h) => h.trim());
         const data = lines.slice(1).map((line) => {
           const values = line.split(",");
-          return headers.reduce((obj, header, i) => {
-            const value = values[i]?.trim();
-            // Try to parse numbers
-            obj[header] = !isNaN(Number(value)) ? Number(value) : value;
-            return obj;
-          }, {} as any);
+          const obj = headers.reduce(
+            (acc, header, i) => {
+              const value = values[i]?.trim();
+              acc[header] = !isNaN(Number(value)) ? Number(value) : value;
+              return acc;
+            },
+            {} as Record<string, string | number>,
+          );
+          // Map to EnergyDataPoint, with type assertions and fallback/defaults if needed
+          return {
+            timestamp: String(obj["timestamp"] ?? ""),
+            energy_kwh: Number(obj["energy_kwh"] ?? 0),
+            source: (obj["source"] ?? "grid") as
+              | "grid"
+              | "solar"
+              | "wind"
+              | "mixed",
+            location: obj["location"] ? String(obj["location"]) : undefined,
+            cost_eur:
+              obj["cost_eur"] !== undefined
+                ? Number(obj["cost_eur"])
+                : undefined,
+          };
         });
 
         // Generate dataset
