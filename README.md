@@ -48,7 +48,7 @@ An AI-powered energy and sustainability data analysis platform that leverages in
 ┌─────────────────────────────────────────────────────────────┐
 │                    Frontend (Next.js/React)                 │
 │  ┌───────────────┐   ┌──────────────┐ ┌──────────────────┐  │
-│  │ File Upload   │   │ Data Preview │ │ Chat Interface   │  │ 
+│  │ File Upload   │   │ Data Preview │ │ Chat Interface   │  │
 │  │ (CSV/JSON)    │   │ (Table View) │ │ (Streaming)      │  │
 │  └───────┬───────┘   └──────┬───────┘ └────────┬─────────┘  │
 └──────────┼──────────────────┼──────────────────┼────────────┘
@@ -131,21 +131,15 @@ npm install
 ```
 
 3. **Configure environment variables**:
-   The project includes a `.env.example` file. To set up your environment variables locally:
+   The project includes a `.env.example` file. Create your local environment file based on it:
 
 ```bash
 cp .env.example .env.local
 ```
 
-Then open the newly created `.env.local` file and add your key:
+Open the newly created `.env.local` file and add your API key:
 
 ```bash
-OPENAI_API_KEY=your_openai_api_key_here
-```
-
-Create a `.env.local` file in the project root:
-
-```env
 OPENAI_API_KEY=your_openai_api_key_here
 ```
 
@@ -338,7 +332,7 @@ You can run the project fully containerized using either a single Docker contain
 docker build -t ecodata-analyzer .
 ```
 
-- Run the container
+- Run the container.
   Replace <your-key> with your actual key (not committed to the repo).
 
 ```bash
@@ -352,7 +346,8 @@ http://localhost:3000
 ```
 
 2. Using Docker Compose (recommended)
-   If you prefer using Docker Compose, a `docker-compose.yml` file is already included in the project:
+
+- If you prefer using Docker Compose, a `docker-compose.yml` file is already included in the project:
 
 Run it with:
 
@@ -360,7 +355,7 @@ Run it with:
 docker compose up --build
 ```
 
-Make sure you export your environment variable before running:
+- Make sure you export your environment variable before running:
 
 ```bash
 export OPENAI_API_KEY=<your_key>
@@ -407,7 +402,8 @@ Contributions are welcome! Areas for enhancement:
 
 ## 📄 License
 
-MIT License - See LICENSE file for details
+**All rights reserved.**  
+This project is protected. No part of this codebase may be copied, modified, distributed, or used without explicit permission from the author.
 
 ## 🔗 References
 
