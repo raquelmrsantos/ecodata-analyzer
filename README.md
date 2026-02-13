@@ -94,8 +94,8 @@ An AI-powered energy and sustainability data analysis platform that leverages in
 - [x] Detailed documentation (AGENTS.md + this README)
 
 ### Optional Enhancements ✨
-- [ ] Unit tests (planned)
-- [ ] Docker containerization (planned)
+- [x] Unit tests (planned)
+- [x] Docker containerization
 - [x] Live deployment URL (deploy to Vercel)
 
 ## 🚀 Getting Started
@@ -293,11 +293,42 @@ You can access the live application here:
 
 ### Deploy to Other Platforms
 
-**Docker** (optional):
+**Docker**:
+This project also supports containerization using Docker.
+Below are the optional steps you can include when running the app outside Vercel, such as local environments or other cloud providers.
+You can run the project fully containerized using either a single Docker container or Docker Compose.
+
+1. Using Docker (simple)
+
+ -  Build the Docker image
 ```bash
 docker build -t ecodata-analyzer .
+```
+
+ -  Run the container
+Replace <your-key> with your actual key (not committed to the repo).
+```bash
 docker run -p 3000:3000 -e OPENAI_API_KEY=<key> ecodata-analyzer
 ```
+
+Your app will be available at:
+```bash
+http://localhost:3000
+```
+
+2. Using Docker Compose (recommended)
+If you prefer using Docker Compose, a `docker-compose.yml` file is already included in the project:
+
+Run it with:
+```bash
+docker compose up --build
+```
+
+Make sure you export your environment variable before running:
+```bash
+export OPENAI_API_KEY=<your_key>
+```
+
 
 ## 🧪 Testing
 
