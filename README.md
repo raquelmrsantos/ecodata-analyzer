@@ -104,7 +104,7 @@ An AI-powered energy and sustainability data analysis platform that leverages in
 
 ### Optional Enhancements ✨
 
-- [x] Unit tests (planned)
+- [x] Unit tests
 - [x] Docker containerization
 - [x] Live deployment URL (deploy to Vercel)
 
@@ -191,7 +191,10 @@ See [AGENTS.md](./AGENTS.md) for detailed tool specifications.
 
 ## 💬 Usage Example
 
-1. **Upload Data**: Click "Upload File" and select a CSV or JSON energy report
+1. **Upload Data**: Click "Upload File" and select a CSV or JSON energy report.
+
+Sample Dataset: A `sample-energy-data.csv` file is included in the project. It provides a small, realistic example of energy consumption data so users can test the full workflow (upload, preview, anomaly detection and insight generation) without needing their own dataset.
+
 2. **Ask Questions**: Use natural language to query your data:
    - _"Check for anomalies in my energy consumption"_
    - _"What's my carbon footprint trend?"_
@@ -290,6 +293,9 @@ eco-analyiser/
 | Streaming responses       | Real-time feedback for long operations               | Improved perceived performance                      |
 | 5-iteration limit         | Prevent infinite loops while allowing complex chains | Safety + cost control                               |
 | Mock tool implementations | Fast MVP development without external APIs           | Immediate validation, can swap with real data later |
+
+No n8n Orchestration:
+I chose not to use n8n because the agent workflow for this MVP is simple enough to be fully handled inside Next.js API Routes. Adding an external orchestrator would increase complexity without meaningful benefits at this stage. The architecture remains ready for n8n integration in future iterations if workflows grow more complex.
 
 ## 📦 Dependencies
 
