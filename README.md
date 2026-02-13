@@ -299,12 +299,24 @@ docker build -t ecodata-analyzer .
 docker run -p 3000:3000 -e OPENAI_API_KEY=<key> ecodata-analyzer
 ```
 
-## 🧪 Testing (Planned)
+## 🧪 Testing
 
-Future implementation roadmap:
-- Unit tests for tool execution logic
-- Integration tests for API routes
-- E2E tests for chat workflow
+Unit tests with Vitest are implemented.
+
+Run all tests:
+```bash
+npm run test
+```
+
+Watch mode (auto-rerun on file changes):
+```bash
+npm run test:watch
+```
+
+Generate coverage report:
+```bash
+npm run test:coverage
+```
 
 ## 📝 Environment Variables
 
