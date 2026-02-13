@@ -96,7 +96,7 @@ An AI-powered energy and sustainability data analysis platform that leverages in
 ### Optional Enhancements ✨
 - [ ] Unit tests (planned)
 - [ ] Docker containerization (planned)
-- [ ] Live deployment URL (deploy to Vercel)
+- [x] Live deployment URL (deploy to Vercel)
 
 ## 🚀 Getting Started
 
@@ -118,6 +118,16 @@ npm install
 ```
 
 3. **Configure environment variables**:
+The project includes a `.env.example` file. To set up your environment variables locally:
+```bash
+cp .env.example .env.local
+```
+
+Then open the newly created `.env.local` file and add your key:
+```bash
+OPENAI_API_KEY=your_openai_api_key_here
+```
+
 Create a `.env.local` file in the project root:
 ```env
 OPENAI_API_KEY=your_openai_api_key_here
@@ -274,22 +284,12 @@ See `package.json` for complete dependency list.
 
 ## 🌐 Deployment
 
-### Deploy to Vercel (Recommended)
+### Deploy to Vercel
 
-1. **Push to GitHub**:
-```bash
-git add .
-git commit -m "Initial commit: EcoData Analyzer MVP"
-git push origin main
-```
+This project is already deployed on Vercel.
+You can access the live application here:
 
-2. **Connect to Vercel**:
-   - Go to [vercel.com](https://vercel.com)
-   - Click "New Project" and select your repository
-   - Add environment variable: `OPENAI_API_KEY`
-   - Click "Deploy"
-
-3. **Share your live URL**: Your app will be live at `your-project.vercel.app`
+➡️ https://ecodata-analyzer.vercel.app
 
 ### Deploy to Other Platforms
 
