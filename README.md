@@ -2,6 +2,8 @@
 
 An AI-powered energy and sustainability data analysis platform that leverages intelligent agents to detect anomalies, generate insights, and provide actionable recommendations for energy optimization and carbon footprint reduction.
 
+🔗 Live Demo: https://ecodata-analyzer.vercel.app
+
 ## 🎯 Features
 
 - **AI-Driven Analysis**: Uses OpenAI's `gpt-4o-mini` model with function calling for intelligent data analysis
@@ -10,7 +12,7 @@ An AI-powered energy and sustainability data analysis platform that leverages in
 - **Report Generation**: Creates comprehensive or summary reports for stakeholder review
 - **Real-time Chat Interface**: Interactive streaming responses with live tool execution feedback
 - **Data Upload & Preview**: Supports file uploads with preview capabilities for energy data
-- **Modern Responsive UI**: Built with React 19, Tailwind CSS, and Shadcn/ui components
+- **Modern Responsive UI**: Built with React 19 and Tailwind CSS
 
 ## 🏗️ Architecture
 
@@ -193,7 +195,8 @@ eco-analyiser/
 │   │   ├── ChatInterface.tsx      # Chat UI with streaming
 │   │   ├── FileUpload.tsx         # File upload component
 │   │   ├── DataPreview.tsx        # Data table preview
-│   │   └── ToolExecutionLog.tsx   # Tool call history
+│   │   ├── ToolExecutionLog.tsx   # Tool call history
+│   │   └── HomeContent.tsx        # Main homepage UI logic (upload + preview + chat)
 │   ├── page.tsx                   # Main landing page
 │   ├── layout.tsx                 # Root layout
 │   └── globals.css                # Global styles
