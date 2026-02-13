@@ -21,14 +21,11 @@ export function ToolExecutionLog({ executions }: ToolExecutionLogProps) {
 
   return (
     <div className="space-y-2">
-      {executions.map((execution: any) => {
+      {executions.map((execution: IToolExecution) => {
         const isSuccess =
           execution.state === "success" ||
           (!!execution.result && execution.state !== "error");
         const isError = execution.state === "error";
-        const hasArgs: boolean = Boolean(
-          execution.args && Object.keys(execution.args as object).length > 0,
-        );
 
         return (
           <div
@@ -71,7 +68,7 @@ export function ToolExecutionLog({ executions }: ToolExecutionLogProps) {
             {/* Args Removed for Debugging */}
 
             {/* Result */}
-            {execution.result && (
+            {execution.result ? (
               <div className="text-xs bg-white bg-opacity-70 p-2 rounded mt-2">
                 <strong className="text-green-700">Result:</strong>
                 <div className="mt-1 text-gray-800 font-mono whitespace-pre-wrap wrap-break-word">
@@ -80,7 +77,7 @@ export function ToolExecutionLog({ executions }: ToolExecutionLogProps) {
                     : String(execution.result)}
                 </div>
               </div>
-            )}
+            ) : null}
 
             {/* Error State Visual Indicator */}
             {isError && (
