@@ -4,9 +4,6 @@ An AI-powered energy and sustainability data analysis platform that leverages in
 
 🔗 Live Demo: https://ecodata-analyzer.vercel.app
 
-📸 Preview
-![Dashboard](./public/project-preview.png)
-
 ## 🎯 Features
 
 - **AI-Driven Analysis**: Uses OpenAI's `gpt-4o-mini` model with function calling for intelligent data analysis
